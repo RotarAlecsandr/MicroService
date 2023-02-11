@@ -1,0 +1,27 @@
+eureka:
+  instance:
+    instance-id: accept-message-service
+  client:
+    service-url:
+      defaultZone: http://localhost:8081/eureka
+spring:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        show_sql: 'true'
+    hibernate:
+      ddl-auto: create-drop
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  application:
+    name: eclient1
+  datasource:
+    driverClassName: org.postgresql.Driver
+    password: erutus91
+    username: rotar
+    url: jdbc:postgresql://localhost:5432/mb
+logging:
+  pattern:
+    console: '%C{1.} [%-5level] %d{HH:mm:ss} - %msg%n'
+server:
+  port: '0'

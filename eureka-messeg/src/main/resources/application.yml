@@ -1,0 +1,14 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8081/eureka
+  instance:
+    instance-id: send-message-service
+logging:
+  pattern:
+    console: '%C{1.} [%-5level] %d{HH:mm:ss} - %msg%n'
+spring:
+  application:
+    name: eclient
+server:
+  port: '0'

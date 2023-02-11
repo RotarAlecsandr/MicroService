@@ -1,0 +1,27 @@
+zuul:
+  routes:
+    to-accept-message:
+      serviceId: to-accept-message
+      stripPrefix: 'true'
+      path: /accept/**
+    send-message:
+      stripPrefix: 'true'
+      path: /send/**
+      serviceId: send-message
+  ribbon:
+    eager-load:
+      enabled: 'true'
+eureka:
+  instance:
+    instance-id: zuul-server
+  client:
+    service-url:
+      defaultZone: http://localhost:8081/eureka/
+logging:
+  pattern:
+    console: '%C{1.} [%-5level] %d{HH:mm:ss} - %msg%n'
+spring:
+  application:
+    name: zuul-server
+server:
+  port: '8080'
